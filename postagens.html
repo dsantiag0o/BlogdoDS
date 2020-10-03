@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="icon" href="imagens/lampada.png" type="imagem/png">
+    <title>Blog do DS</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function postar(){
+            var titulo = document.getElementById("txtTitulo").value;
+            hoje = new Date
+            diaNome = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+            mesNome = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto","Setembro","Outubro", "Novembro", "Dezembro");
+            var dia = diaNome[hoje.getDay()];
+            var mes = mesNome[hoje.getMonth()];
+            var ano = hoje.getFullYear();
+            var postagem = document.getElementById("txtPostagem").value;
+            var divData = document.getElementById("divResultadoData");
+            var divPost = document.getElementById("divResultadoPost");
+            var divTitulo = document.getElementById("divResultadoTitulo");
+            divPost.innerText = postagem+"\n"
+            divTitulo.innerText = titulo+"\n";
+            divData.innerText = dia+", "+hoje.getDate()+" de "+mes+" de "+ano+"\n";
+        }
+    </script>
+</head>
+<body>
+    <div id="cabecalho">
+        <a href="perfil.html"><img src="imagens/logoTitle2.png" width="92%" height="82%" alt="Título do Blog"></a>
+    </div>
+        <nav>
+            <ul id="barra"> 
+                <a href="perfil.html"><li class="opcao">Perfil</li></a>
+                <a href="postagens.html"><li class="opcao">Postagens</li></a>
+            </ul>  
+        </nav>
+    <section>
+        <div class="topico">
+            <img class="lobo" src="imagens/lobo.png" width="4.5%" height="4.5%  " alt="lobo">
+            <h1 style="padding-right: 75%; font-size: 93%;">- MINHAS POSTAGENS -</h1>
+        </div><br>
+        <div>
+            <label style="font-family:Arial; font-weight: bold;">Título:</label><br>
+            <input type="text" id="txtTitulo"/><br><br>
+              <label style="font-family:Arial; font-weight: bold;">Conteúdo:</label><br>
+            <textarea type="text" id="txtPostagem"/></textarea><br><br>
+            <button id="btnEnviar" onclick="postar()" >Postar</button><br><br>
+        </div>
+        <article>
+        <div id="divResultadoTitulo">
+        </div>
+        <div id="divResultadoPost">
+        </div><br>
+        <div id="divResultadoData">
+        </div>
+        </article>
+    </section>
+    <footer>
+        Daniel Santiago - 2020 - @All Right reserved
+    </footer>
+</body>
+</html>
